@@ -32,7 +32,7 @@ class DateConversionTestCase(unittest.TestCase):
         "Test the round trip between MJD_to_ISOT and ISOT_to_MJD."
         for mjd in np.arange(40000, 57700, 31.1424, dtype=np.float):
             isot = dateconvert.MJD_to_ISOT(mjd)
-            self.assertAlmostEqual(mjd, dateconvert.ISOT_to_MJD(isot), places=9)
+            self.assertAlmostEqual(mjd, dateconvert.ISOT_to_MJD(isot), places=8)
 
     def test_ISOT_to_MJD_bad_input(self):
         "Pass the correct type (str), but with an invalid value."
